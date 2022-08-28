@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ServiceAndAbout
+<!-- Main start -->
+<main>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="image">
+            <img src="~/uploads/page/@Model.HeroImgUrl" alt="bht" />
+        </div>
+        <div class="info">
+            <h1 class="page-title">@Model.Name</h1>
+        </div>
+    </section>
+    <!-- Hero end -->
+    <!-- Static Text start -->
+    <section class="static-text">
+        <div class="container">
+            <div class="title">
+                <h1>@Model.Title</h1>
+            </div>
+            <div class="subtitle">
+                <p>@Model.Desc</p>
+            </div>
+        </div>
+    </section>
+    <!-- Static Text end -->
+    <!-- Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text">
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+                <!--/.col -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact start -->
+    <section class="contact">
+        <div class="container">
+            <div class="row row-cols-1">
+                <h3 class="title">BİZƏ YAZIN</h3>
+            </div>
+            <div class="contacts">
+                <form name="sendmessage">
+                    <div class="row row-cols-md-3">
+                        <div class="col">
+                            <label for="firstName">Adı</label>
+                            <input name="firstName"
+                                   placeholder="Adınızı daxil edin"
+                                   type="text" />
+                        </div>
+                        <div class="col">
+                            <label for="lastName">Soyadı</label>
+                            <input name="lastName"
+                                   placeholder="Soyadınızı daxil edin"
+                                   type="text" />
+                        </div>
+                        <div class="col">
+                            <label for="email">Adı</label>
+                            <input name="email"
+                                   placeholder="Email ünvanınızı daxil edin"
+                                   type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="mobileNumber">Mobil nömrəniz</label>
+                            <input name="mobileNumber"
+                                   placeholder="Mobil nömrənizi daxil edin"
+                                   type="number" />
+                        </div>
+                        <div class="col-md-8">
+                            <label for="message">Mesajınız</label>
+                            <textarea name="message"
+                                      placeholder="Mesajınızı daxil edin"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="actions">
+                                <button class="form-submit" type="submit">
+                                    məktubu göndər
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Contact end -->
+</main>
+<!-- Main end -->
+
