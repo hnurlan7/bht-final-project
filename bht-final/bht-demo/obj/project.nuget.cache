@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CL9xAbZM4b93cvcpXzLFoO/jMo02RR1LxeS2E3w/YWJr6exOZbS5fwq+CN7rN2n0/orMApRhs9EPOnLlfxZaRw==",
+  "dgSpecHash": "zXyj1dO437PcyafIReFtlCKTuKk0SCyaV7dc04cDex8qJH03ACOUYcXyJ9rBMwmQg+XdrFvxcZ0vOapPp+58+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\bht-demo.csproj",
+  "projectFilePath": "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\bht-demo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hnurl\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512",
     "C:\\Users\\hnurl\\.nuget\\packages\\mailkit\\3.3.0\\mailkit.3.3.0.nupkg.sha512",

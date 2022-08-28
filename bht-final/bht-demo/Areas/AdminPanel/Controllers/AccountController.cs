@@ -62,62 +62,6 @@ namespace bht_demo.Areas.AdminPanel.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("login", "account");
         }
-        public IActionResult Forgot()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> Forgot(ForgotViewModel forgotView)
-        {
-            if (!ModelState.IsValid)
-            { return View(); }
-            AppUser admin = await _userManager.Users.FirstOrDefaultAsync(x => x.NormalizedEmail == forgotView.Email.ToUpper());
-            if (admin == null)
-            {
-                ModelState.AddModelError("Email", "Bele bir istifadeci yoxdur!!!");
-                return View();
-            }
-            var token = await _userManager.GeneratePasswordResetTokenAsync(admin);
-            var url = Url.Action("resetpassword", "account", new { email = admin.Email, token }, Request.Scheme);
-            _emailService.Send(admin.Email, "Şifrə Dəyişikliyi", "<a href='" + url + "'>Şifrə Dəyişikliyi</a>");
-            return RedirectToAction("login", "account");
-        }
-        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPassword)
-        {
-            AppUser user = await _userManager.FindByEmailAsync(resetPassword.Email);
-            if (user == null || !(await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", resetPassword.Token)))
-            {
-                return RedirectToAction("index", "error");
-            }
-
-            return View(resetPassword);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ChangePassword(ResetPasswordViewModel resetPassword)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("ResetPassword", resetPassword);
-            }
-            AppUser user = await _userManager.Users.FirstOrDefaultAsync(x => x.NormalizedEmail == resetPassword.Email.ToUpper());
-            if (user == null)
-            {
-                ModelState.AddModelError("Email", "Bele bir istifadeci yoxdur!!!");
-                return View();
-            }
-            var result = await _userManager.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
-            if (!result.Succeeded)
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
-                return View("ResetPassword", resetPassword);
-            }
-            return RedirectToAction("login");
-
-        }
         public IActionResult Admins()
         {
 

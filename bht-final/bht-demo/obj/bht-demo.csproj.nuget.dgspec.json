@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\bht-demo.csproj": {}
+    "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\bht-demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\bht-demo.csproj": {
+    "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\bht-demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\bht-demo.csproj",
+        "projectUniqueName": "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\bht-demo.csproj",
         "projectName": "bht-demo",
-        "projectPath": "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\bht-demo.csproj",
+        "projectPath": "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\bht-demo.csproj",
         "packagesPath": "C:\\Users\\hnurl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hnurl\\Desktop\\bht-final\\bht-demo\\obj\\",
+        "outputPath": "C:\\Users\\hnurl\\Desktop\\bht-final-project\\bht-final\\bht-demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hnurl\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Contact";
     Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
@@ -30,7 +30,7 @@
                     <td>@item.Surname</td>
                     <td>@item.Email</td>
                     <td>@item.PhoneNumber</td>
-                    <td><a asp-controller="ContactUs" asp-action="Detail" asp-route-id="@item.Id" data-id="@item.Id" data-name="ContactUs" class="btn btn-danger delete-btn">Ətraflı</a></td>
+                    <td><a asp-controller="ContactUs" asp-action="Detail" asp-route-id="@item.Id" data-id="@item.Id" data-name="ContactUs" class="btn btn-primary delete-btn">Ətraflı</a></td>
 
                     <td><a asp-controller="ContactUs" asp-action="Delete" asp-route-id="@item.Id" data-id="@item.Id" data-name="ContactUs" class="btn btn-danger delete-btn">Sil</a></td>
                     

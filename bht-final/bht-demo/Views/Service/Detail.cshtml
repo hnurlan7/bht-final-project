@@ -3,16 +3,16 @@
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model ServiceAndAbout
+@model ServiceVM
 <!-- Main start -->
 <main>
     <!-- Hero -->
     <section class="hero">
         <div class="image">
-            <img src="~/uploads/page/@Model.HeroImgUrl" alt="bht" />
+            <img src="~/uploads/page/@Model.ServiceAndAbout.HeroImgUrl" alt="bht" />
         </div>
         <div class="info">
-            <h1 class="page-title">@Model.Name</h1>
+            <h1 class="page-title">@Model.ServiceAndAbout.Name</h1>
         </div>
     </section>
     <!-- Hero end -->
@@ -20,10 +20,10 @@
     <section class="static-text">
         <div class="container">
             <div class="title">
-                <h1>@Model.Title</h1>
+                <h1>@Model.ServiceAndAbout.Title</h1>
             </div>
             <div class="subtitle">
-                <p>@Model.Desc</p>
+                <p>@Model.ServiceAndAbout.Desc</p>
             </div>
         </div>
     </section>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text">
-                        @Html.Raw(Model.Content)
+                        @Html.Raw(Model.ServiceAndAbout.Content)
                     </div>
                 </div>
                 <!--/.col -->
@@ -49,37 +49,35 @@
                 <h3 class="title">BİZƏ YAZIN</h3>
             </div>
             <div class="contacts">
-                <form name="sendmessage">
+                <form method="post" enctype="multipart/form-data" name="sendmessage">
                     <div class="row row-cols-md-3">
                         <div class="col">
-                            <label for="firstName">Adı</label>
-                            <input name="firstName"
+                            <label asp-for="ContactUs.Name">Adı</label>
+                            <input asp-for="ContactUs.Name"
                                    placeholder="Adınızı daxil edin"
-                                   type="text" />
+                                   />
                         </div>
                         <div class="col">
-                            <label for="lastName">Soyadı</label>
-                            <input name="lastName"
+                            <label asp-for="ContactUs.Surname">Soyadı</label>
+                            <input asp-for="ContactUs.Surname"
                                    placeholder="Soyadınızı daxil edin"
-                                   type="text" />
+                                    />
                         </div>
                         <div class="col">
-                            <label for="email">Adı</label>
-                            <input name="email"
-                                   placeholder="Email ünvanınızı daxil edin"
-                                   type="text" />
+                            <label asp-for="ContactUs.Email">Email</label>
+                            <input placeholder="Email ünvanınızı daxil edin"
+                                   asp-for="ContactUs.Email" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="mobileNumber">Mobil nömrəniz</label>
-                            <input name="mobileNumber"
-                                   placeholder="Mobil nömrənizi daxil edin"
-                                   type="number" />
+                            <label asp-for="ContactUs.PhoneNumber">Mobil nömrəniz</label>
+                            <input asp-for="ContactUs.PhoneNumber"
+                                   placeholder="Mobil nömrənizi daxil edin"/>
                         </div>
                         <div class="col-md-8">
-                            <label for="message">Mesajınız</label>
-                            <textarea name="message"
+                            <label asp-for="ContactUs.Message">Mesajınız</label>
+                            <textarea asp-for="ContactUs.Message"
                                       placeholder="Mesajınızı daxil edin"></textarea>
                         </div>
                     </div>

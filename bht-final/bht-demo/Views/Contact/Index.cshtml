@@ -3,7 +3,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model ContactUs
 <!-- Main start -->
 <main>
     <!-- Hero -->
@@ -182,37 +182,33 @@
                 <h3 class="title">BİZƏ YAZIN</h3>
             </div>
             <div class="contacts">
-                <form name="sendmessage">
+                <form method="post" enctype="multipart/form-data" name="sendmessage">
                     <div class="row row-cols-md-3">
                         <div class="col">
-                            <label for="firstName">Adı</label>
-                            <input name="firstName"
-                                   placeholder="Adınızı daxil edin"
-                                   type="text" />
+                            <label asp-for="Name">Adı</label>
+                            <input asp-for="Name"
+                                   placeholder="Adınızı daxil edin" />
                         </div>
                         <div class="col">
-                            <label for="lastName">Soyadı</label>
-                            <input name="lastName"
-                                   placeholder="Soyadınızı daxil edin"
-                                   type="text" />
+                            <label asp-for="Surname">Soyadı</label>
+                            <input asp-for="Surname"
+                                   placeholder="Soyadınızı daxil edin" />
                         </div>
                         <div class="col">
-                            <label for="email">Adı</label>
-                            <input name="email"
-                                   placeholder="Email ünvanınızı daxil edin"
-                                   type="text" />
+                            <label asp-for="Email">Email</label>
+                            <input placeholder="Email ünvanınızı daxil edin"
+                                   asp-for="Email" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="mobileNumber">Mobil nömrəniz</label>
-                            <input name="mobileNumber"
-                                   placeholder="Mobil nömrənizi daxil edin"
-                                   type="number" />
+                            <label asp-for="PhoneNumber">Mobil nömrəniz</label>
+                            <input asp-for="PhoneNumber"
+                                   placeholder="Mobil nömrənizi daxil edin" />
                         </div>
                         <div class="col-md-8">
-                            <label for="message">Mesajınız</label>
-                            <textarea name="message"
+                            <label asp-for="Message">Mesajınız</label>
+                            <textarea asp-for="Message"
                                       placeholder="Mesajınızı daxil edin"></textarea>
                         </div>
                     </div>

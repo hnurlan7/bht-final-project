@@ -7,6 +7,6 @@ namespace bht_demo.ViewModels
     public class ServiceVM
     {
         public ServiceAndAbout ServiceAndAbout { get; set; }
-        public IEnumerable<ContactUs> ContactUs { get; set; }
+        public ContactUs ContactUs { get; set; }
     }
 }
